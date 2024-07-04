@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Scanner;
 
 @Table(name = "users")
 @Data
@@ -21,4 +22,9 @@ public class User {
     private String lastName;
 
     private Byte age;
+
+    @Override
+    public String toString() {
+        return "User " + id + ": (" + name + ", " + lastName + ", " + age + ")";
+    }
 }
