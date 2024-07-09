@@ -5,9 +5,7 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -109,7 +107,7 @@ public class UserDaoHibernateImpl implements UserDao {
             if (transaction != null) {
                 transaction.rollback();
             }
-            logger.log(Level.WARNING, "Error while removing user by id (hibernate): " + e.getMessage());
+            logger.log(Level.WARNING, "Error while getting all users (hibernate): " + e.getMessage());
         }
         return users;
     }
